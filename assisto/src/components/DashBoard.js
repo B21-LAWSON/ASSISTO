@@ -5,9 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../img/logo.png';
 import { CiSettings } from "react-icons/ci";
+import PieChart from './Piechar';
+
 
 function Dashboard() {
   // États pour afficher/masquer le modale
+  const [waterConsumption, setWaterConsumption] = useState([300, 150, 100, 50]);
+
   const [showModal, setShowModal] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState('');
 
@@ -40,16 +44,35 @@ function Dashboard() {
           </div>
 
           <div>
-            <div style={{ width: '200px' }}>
-              <button type="button" className='btn btn-primary mb-3 btn-lg'>Cuisine</button>
-              <button type="button" className='btn btn-primary mb-3 btn-lg'>Douche</button>
-              <button type="button" className='btn btn-primary mb-3 btn-lg'>Toilette</button>
-              <button type="button" className='btn btn-primary mb-3 btn-lg'>SDB</button>
-            </div>
+              <Container style={{ width: '1000px', height: '250px' }} className='border' >
+                <Row className="justify-content-md-center border h-100 align-items-center" >
+                  <Col className='border justify-content-center'> 
+                    <div style={{ width: '220px' }} className='d-grid gap-2'>
+                      <Button variant="primary" size="lg">Cuisine</Button>
+                      <Button variant="primary" size="lg">Douche</Button>
+                    </div>
+                   </Col>
 
-            <div>
+                   <Col className='border justify-content-center'> 
+                    <div style={{ width: '220px' }} className='d-grid gap-2'>
+                      <Button variant="primary" size="lg">SDB</Button>
+                      <Button variant="primary" size="lg">Toilette</Button>
+                    </div>
+                   </Col>
 
-            </div>
+                  <Col xs={6} className='border' style={{ height: '170px' }}>
+                    Defis
+                  </Col>
+                </Row>
+            </Container>
+
+            <Container style={{ width: '1000px', height: '335px' }} className='border'>
+              consommation
+              <div>
+                <h2>Surveillance de la consommation d'eau</h2>
+                <PieChart dataValues={waterConsumption} />
+              </div>
+            </Container>
           </div>
         </div>
        

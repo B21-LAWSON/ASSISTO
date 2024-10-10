@@ -21,7 +21,7 @@ function InfoPage() {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100" style={{ backgroundColor: 'white' }}>
       <div className="card shadow p-4" style={{ width: '600px', borderRadius: '15px' }}>
-        <h2 className="text-center mb-4" style={{ color: 'indigo' }}>Informations sur la consommation</h2>
+        <h2 className="text-center mb-4" style={{ color: 'royalblue' }}>Informations sur la consommation</h2>
         <form onSubmit={handleSubmit}>
           {/* Nombre de personnes dans la maison */}
           <div className="mb-3">
@@ -111,7 +111,7 @@ function InfoPage() {
           <button
             type="submit"
             className="btn btn-primary w-100 mt-3"
-            style={{ backgroundColor: 'indigo', borderRadius: '50px' }}
+            style={{ backgroundColor: 'royalblue', borderRadius: '50px' }}
           >
             Suivant
           </button>
